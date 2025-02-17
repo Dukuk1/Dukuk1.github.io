@@ -27,10 +27,13 @@
 
         // Extract access token from URL
         function getAccessTokenFromUrl() {
-            const hash = window.location.hash.substr(1);
-            const params = new URLSearchParams(hash);
-            return params.get('code');
-        }
+                const query = window.location.search.substring(1);
+                const params = new URLSearchParams(query);
+                
+                console.log(params.get("code"));
+                return params.get('code');
+                
+            }
 
         const accessToken = getAccessTokenFromUrl();
 

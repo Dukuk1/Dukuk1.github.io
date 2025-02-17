@@ -26,7 +26,7 @@ button.addEventListener("click", () => {
     }
          title.innerText = "title: " + anime.data.title;
         if(anime.data.title_english == null){
-            titleE.innerText = "Null"
+            titleE.innerText = ""
         } else {
 
             titleE.innerText = "english title: " + anime.data.title_english;

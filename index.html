@@ -4,57 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRA</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <a id="login" href="#">Login with MyAnimeList</a>
-    <div id="profile"></div>
+    <img src="#" id="img_1">
+    <button id="btn">generate</button>
 
-    <script>
-        const redirectUri = '/';
-        const state = 'random_string';
-        const codeChallengeMethod = 'plain';
-        
-        // const codeChallenge = 'YOUR_PKCE_CODE_CHALLENGE';
-        // const clientId = 'YOUR_CLIENT_ID';
-
-        // const code_verifier = "bc2b3b9656a9308f45e0982a6a4272907b56f3927d01db80f0e06dea"
-        const codeChallenge = "3qR6vaeerzuZoa6_hzrAas7bHS9nyXXtO2gE1B6jx2Y"
-        const clientId = "f146acc25110c2fa1f5e597a3ee8bdc3"
-
-        document.getElementById('login').href = `https://myanimelist.net/v1/oauth2/authorize?response_type=code&client_id=${clientId}&state=${state}&code_challenge=${codeChallenge}&code_challenge_method=${codeChallengeMethod}`;
-
-        // Extract access token from URL
-        function getAccessTokenFromUrl() {
-                const query = window.location.search.substring(1);
-                const params = new URLSearchParams(query);
-                
-                console.log(params.get("code"));
-                return params.get('code');
-                
-            }
-
-        const accessToken = getAccessTokenFromUrl();
-
-        if (accessToken) {
-            // Make an API request to get the user's profile
-            fetch('https://api.myanimelist.net/v2/users/@me', {
-                headers: {
-
-mode: 'no-cors',
-
-                    
-                    'Authorization': `Bearer ${accessToken}`
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('profile').innerText = JSON.stringify(data, null, 2);
-                })
-                .catch(error => console.error('Error:', error));
-        }
+    <script src="node.js">
     </script>
+
 </body>
 
 </html>

@@ -41,6 +41,10 @@
             // Make an API request to get the user's profile
             fetch('https://api.myanimelist.net/v2/users/@me', {
                 headers: {
+
+mode: 'no-cors',
+
+                    
                     'Authorization': `Bearer ${accessToken}`
                 }
             })

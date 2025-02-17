@@ -24,12 +24,12 @@ button.addEventListener("click", () => {
         } else {
             img.src = "arc3.gif"
     }
-         title.innerText = "title: " + anime.data.title;
+         title.innerText = anime.data.title;
         if(anime.data.title_english == null){
             titleE.innerText = ""
         } else {
 
-            titleE.innerText = "english title: " + anime.data.title_english;
+            titleE.innerText = "In English: " + anime.data.title_english;
         }
         syn.innerText = anime.data.synopsis
          
